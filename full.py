@@ -3,7 +3,9 @@ import random as rnd
 from math import sqrt
 import tkinter as tk
 from tkinter import *
+from memory_profiler import profile
 
+@profile
 def exchange():
     a, b, c = [input('Введите a '), input('Введите b '), input('Введите c ')]
     start_time = time.time()
@@ -34,12 +36,14 @@ def num_check():
         except ValueError:
             print("Введено не число")
 
+@profile
 def fifth_power_1():
     start_time = time.time()
     x = rnd.randint(0, 100)
     print('x:', x, x**5)
     print("%s seconds" % (time.time() - start_time))
 
+@profile
 def fifth_power_2():
     start_time = time.time()
     x = rnd.randint(0, 100)
@@ -113,6 +117,7 @@ def even_odd():
     print("Кол-во нечетных ", count_odd)
     print("%s seconds" % (time.time() - start_time))
 
+@profile
 def find_divide():
     n = int(input("Введите число от 1 до 249 включительно"))
     start_time = time.time()    
