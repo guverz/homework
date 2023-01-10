@@ -6,8 +6,10 @@ from tkinter import *
 
 def exchange():
     a, b, c = [input('Введите a '), input('Введите b '), input('Введите c ')]
+    start_time = time.time()
     a, b, c = b, c, a
     print(a, b, c)
+    print("%s seconds" % (time.time() - start_time))
 
 def num_check():
     while True:
